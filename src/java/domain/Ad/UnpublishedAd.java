@@ -1,7 +1,9 @@
 package domain.Ad;
 
 public interface UnpublishedAd extends Ad {
-  PublishedAd published();
+  PublishedAd publish();
 
   ErasedAd erased();
+
+  ExpiredAd expire();
 }
