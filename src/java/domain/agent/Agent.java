@@ -2,7 +2,7 @@ package domain.agent;
 
 import domain.ad.AdPublisher;
 
-interface Agent extends AdPublisher {
+public interface Agent extends AdPublisher {
 }
 
 
