@@ -1,4 +1,4 @@
-package domain.Ad;
+package domain.ad;
 
 public interface UnpublishedAd extends Ad {
   PublishedAd publish();

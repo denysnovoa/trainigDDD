@@ -1,6 +1,6 @@
 package domain.agent;
 
-import domain.Ad.AdPublisher;
+import domain.ad.AdPublisher;
 
 interface Agent extends AdPublisher {
 }
