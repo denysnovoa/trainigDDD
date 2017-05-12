@@ -11,9 +11,9 @@ gradle-app.setting
 /javaDoc/
 *.log
 /.idea/
-.idea
-*.iml
 
 # Jenv
 .version
 /gradle/
+/gradlew.bat
+/gradlew
