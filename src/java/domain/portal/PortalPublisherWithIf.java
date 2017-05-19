@@ -10,16 +10,16 @@ import java.util.UUID;
 public class PortalPublisherWithIf implements AdPublisher {
 
   private final UUID publisherId;
-  private final String partnetship;
+  private final String partnetshIp;
 
-  public PortalPublisherWithIf(UUID publisherId, String partnetship) {
+  public PortalPublisherWithIf(UUID publisherId, String partnetshIp) {
     this.publisherId = publisherId;
-    this.partnetship = partnetship;
+    this.partnetshIp = partnetshIp;
   }
 
   @Override
   public PublishedAd publish(UnpublishedAd ad) throws PortalNotPublishException {
-    if (partnetship != "fotocasa")
+    if (partnetshIp != "fotocasa")
       throw new PortalNotPublishException();
 
     return new OrdinaryPublishedAd(publisherId, (PrivateAd) ad);
