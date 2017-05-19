@@ -7,17 +7,14 @@ import domain.ad.PublishedAd;
 import domain.ad.UnpublishedAd;
 import java.util.UUID;
 
-public class IndependentAgentImpl implements Agent {
+public class IndependentAgentImpl implements IndependentAgent {
   public final UUID publisherId;
   private final Email email;
   private final boolean important;
 
-  private String title;
-  private String description;
-
 
   public IndependentAgentImpl(String emailValue, UUID publisherId, boolean important) throws EmailNotValidException {
-    email = new Email(emailValue);
+    this.email = new Email(emailValue);
     this.publisherId = publisherId;
     this.important = important;
   }
@@ -27,6 +24,6 @@ public class IndependentAgentImpl implements Agent {
 
     return important
         ? new OrdinaryPublishedAd(publisherId, (PrivateAd) ad)
-        : new OrdinaryModeratedAd(publisherId, title, description);
+        : new OrdinaryModeratedAd(publisherId, ((PrivateAd) ad).title, ((PrivateAd) ad).description);
   }
 }
