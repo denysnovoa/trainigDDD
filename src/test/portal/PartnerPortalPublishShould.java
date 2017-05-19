@@ -1,3 +1,5 @@
+package portal;
+
 import domain.ad.PrivateAd;
 import domain.portal.PartnerPortal;
 import domain.portal.PortalNotPublishException;
