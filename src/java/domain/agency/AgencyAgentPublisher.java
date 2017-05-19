@@ -4,9 +4,12 @@ import domain.ad.OrdinaryPromotionPublishedAd;
 import domain.ad.OrdinaryPublishedAd;
 import domain.ad.PrivateAd;
 import domain.ad.PublishedAd;
+import domain.ad.UnpublishedAd;
+import domain.agent.Agent;
+import domain.portal.PortalNotPublishException;
 import java.util.UUID;
 
-public class AgencyAgentPublisher {
+public class AgencyAgentPublisher implements Agent {
 
   private final boolean promotion;
   private UUID publisherId;
@@ -16,9 +19,11 @@ public class AgencyAgentPublisher {
     this.promotion = promotion;
   }
 
-  public PublishedAd publisher(UUID propertyId, String title, String description) {
+  @Override
+  public PublishedAd publish(UnpublishedAd ad) throws PortalNotPublishException {
     return promotion
         ? new OrdinaryPromotionPublishedAd()
-        : new OrdinaryPublishedAd(publisherId, new PrivateAd(propertyId, title, description));
+        : new OrdinaryPublishedAd(publisherId, (PrivateAd) ad);
+
   }
 }
