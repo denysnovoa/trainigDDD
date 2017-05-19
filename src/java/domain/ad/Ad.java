@@ -1,4 +1,4 @@
 package domain.ad;
 
-interface Ad {
+public interface Ad {
 }
