@@ -4,9 +4,14 @@ import java.util.UUID;
 
 public class PrivateAd implements UnpublishedAd {
   public final UUID propertyId;
+  private final String title;
+  private final String description;
 
-  public PrivateAd(UUID propertyId) {
+
+  public PrivateAd(UUID propertyId, String title, String description) {
     this.propertyId = propertyId;
+    this.title = title;
+    this.description = description;
   }
 
   @Override

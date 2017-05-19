@@ -12,6 +12,9 @@ public class IndependentAgentImpl implements Agent {
   private final Email email;
   private final boolean important;
 
+  private String title;
+  private String description;
+
 
   public IndependentAgentImpl(String emailValue, UUID publisherId, boolean important) throws EmailNotValidException {
     email = new Email(emailValue);
@@ -24,6 +27,6 @@ public class IndependentAgentImpl implements Agent {
 
     return important
         ? new OrdinaryPublishedAd(publisherId, (PrivateAd) ad)
-        : new OrdinaryModeratedAd(publisherId);
+        : new OrdinaryModeratedAd(publisherId, title, description);
   }
 }

@@ -17,6 +17,6 @@ public class BumpedPublishedAd implements PublishedAd {
 
   @Override
   public UnpublishedAd unPublish() {
-    return new PrivateAd(propertyId);
+    return new PrivateAd(propertyId, "title", "description");
   }
 }

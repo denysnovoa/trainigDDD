@@ -15,7 +15,7 @@ public class ImportantAgentShould {
   private UUID publisherId;
   private String email;
   private UUID propertyId;
-  private UnpublishedAd A_PRIVATE_AD = new PrivateAd(propertyId);
+  private UnpublishedAd A_PRIVATE_AD = new PrivateAd(propertyId, "title", "description");
 
   @Test
   public void agent_important_publish_a_publishedAd() throws EmailNotValidException {

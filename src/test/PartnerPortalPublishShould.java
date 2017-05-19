@@ -14,6 +14,6 @@ public class PartnerPortalPublishShould {
   public void publish_ad_without_moderation() throws PortalNotPublishException {
     PartnerPortal partnerPortal = new PartnerPortal(publisherId);
 
-    Assert.assertNotNull(partnerPortal.publish(new PrivateAd(propertyId)));
+    Assert.assertNotNull(partnerPortal.publish(new PrivateAd(propertyId, "title", "description")));
   }
 }
